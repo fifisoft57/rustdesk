@@ -54,16 +54,21 @@ pub fn get_license_from_string(s: &str) -> ResultType<License> {
             });
         }
     } else {
-        let strs = if s.contains("-licensed-") {
-            s.split("-licensed-")
-        } else {
-            s.split("--")
-        };
-        for s in strs {
-            if let Ok(lic) = get_license_from_string_(s) {
-                return Ok(lic);
-            }
-        }
+      //   let strs = if s.contains("-licensed-") {
+      //      s.split("-licensed-")
+      //  } else {
+      //      s.split("--")
+      //  };
+      //  for s in strs {
+      //      if let Ok(lic) = get_license_from_string_(s) {
+      //          // return Ok(lic);
+      //      });
+      //  }
+      return Ok(License {
+        host: "rustdesk.phil-prod.fr".to_owned(),
+        key: "lQzuikLzHiz9cwrx+kSl2+BLNwj9CzMItS0jwhhQPGs=".to_owned(),
+        api: "".to_owned(),
+      });
     }
     bail!("Failed to parse");
 }
