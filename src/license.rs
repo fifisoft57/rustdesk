@@ -62,8 +62,8 @@ pub fn get_license_from_string(s: &str) -> ResultType<License> {
         for s in strs {
             if let Ok(lic) = get_license_from_string_(s) {
                 // return Ok(lic);
-            });
+            };
         }
-
+    }
     bail!("Failed to parse");
 }
